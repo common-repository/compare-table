@@ -1,0 +1,135 @@
+.wp-block-table.ruigehond014 {
+    overflow-x: auto;
+    user-select: none;
+}
+
+.wp-block-table.ruigehond014 table {
+    border-collapse: collapse;
+}
+
+.wp-block-table.ruigehond014 table td {
+    vertical-align: top;
+}
+
+.wp-block-table.ruigehond014 table td > * {
+    margin: 0;
+    padding: .1em .21em;
+}
+
+.wp-block-table.ruigehond014 table.loading {
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    /* background shine: https://stackoverflow.com/a/55989998 */
+    background-image: linear-gradient(
+            to right,
+            transparent 33%,
+            rgba(140, 140, 140, 0.09) 50%,
+            transparent 66%
+    );
+    background-size: 300% 100%;
+    animation: ruigehond014_shine 1s infinite;
+}
+
+@keyframes ruigehond014_shine {
+    0% {
+        background-position: right;
+    }
+    /*100% {
+      background-position: left; it's the default value, no need to define it
+    }*/
+}
+
+.wp-block-table.ruigehond014 select {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.wp-block-table.ruigehond014 .description {
+    position: fixed;
+    z-index: 2; /* must be higher than info icon */
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden; /* for nice fade-in, but instant fade-out */
+    overflow: hidden;
+    background-color: rgb(240, 240, 240);
+    padding: 3px;
+    transition: opacity .5s ease-in-out;
+}
+
+.wp-block-table.ruigehond014 .description.active {
+    width: auto;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* info icon */
+.description + p:after {
+    content: '';
+    z-index: 1;
+    background-color: currentColor;
+    display: inline-block;
+    width: .75em;
+    height: .75em;
+    margin-left: .1em;
+    vertical-align: text-top;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z'/%3E%3C/svg%3E");
+}
+
+/* cross hair */
+.wp-block-table.ruigehond014 .cross-haired {
+    background-color: rgba(0, 0, 0, .08);
+}
+
+.wp-block-table.ruigehond014 .cross-haired .cross-haired {
+    background-color: rgba(0, 0, 0, .13);
+}
+
+/* nav buttons */
+.wp-block-table.ruigehond014 .button {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    background-color: currentColor;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    padding: .5rem;
+    z-index: 2;
+    transition: opacity .34s ease-in-out;
+}
+
+.wp-block-table.ruigehond014 .button.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.wp-block-table.ruigehond014 .button.halfway {
+    position: fixed;
+    top: 50vh;
+}
+
+.wp-block-table.ruigehond014 .button.left {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+    left: .7rem;
+}
+
+.wp-block-table.ruigehond014 .button.right {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z'/%3E%3C/svg%3E");
+    right: .7rem;
+}
+
+@media (max-width: 555px) {
+    .wp-block-table.ruigehond014 .cell {
+        min-width: 45vw;
+        max-width: 45vw;
+    }
+}

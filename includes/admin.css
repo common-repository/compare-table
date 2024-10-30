@@ -1,0 +1,195 @@
+/**
+ * rows
+ */
+
+.ruigehond014-row {
+    position: relative;
+    padding: .1rem .31rem;
+    border-radius: 3px;
+    border: solid 1px rgba(0, 0, 0, 0);
+}
+
+.ruigehond014-row.active {
+    border-color: rgba(0, 0, 0, .4);
+}
+
+.ruigehond014-row .sortable-handle {
+    cursor: grab;
+    padding: .23rem;
+}
+
+.ruigehond014-row:not(.orderable) .sortable-handle {
+    visibility: hidden;
+}
+
+.ruigehond014 .unsaved {
+    background-color: rgba(255, 0, 0, .2);
+}
+
+.ui-sortable-handle:hover {
+    cursor: grab;
+}
+
+.ruigehond014-row > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ruigehond014-row > label {
+    cursor: inherit;
+    width: 120px;
+}
+
+.ruigehond014-row.header-row span {
+    width: 162px;
+    margin: -3px 0 0 30px;
+}
+
+/* buttons */
+.ruigehond014 .close,
+.ruigehond014-delete > *,
+.ruigehond014-edit > * {
+    background: rgba(0, 0, 0, .34);
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    border: none;
+    padding: .2em .35em !important;
+    margin: 0 0 0 .13em;
+    font-family: inherit; /* optional, input has OS specific font-family */
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 2px;
+    outline: 0;
+    font-size: .8rem;
+    line-height: 1rem;
+}
+
+.ruigehond014-edit > * {
+    background-color: #2271b1; /* WordPress blue */
+    vertical-align: middle;
+}
+
+/* protect the buttons from strange translations */
+.ruigehond014-edit > *,
+.ruigehond014-delete > *,
+.ruigehond014-clear {
+    text-transform: uppercase;
+    display: inline-block;
+    max-width: 100px;
+    max-height: calc(2rem + .2em);
+    overflow: hidden;
+}
+
+#ruigehond014-compare-overlay .close:hover,
+.ruigehond014-edit > *:hover {
+    color: rgb(255, 255, 255);
+    background-color: #1e8cbe; /* WordPress blue hover */
+}
+
+.ruigehond014-delete .delete {
+    display: none;
+}
+
+.ruigehond014-delete .delete[data-id] {
+    display: inline-block;
+}
+
+.ruigehond014-delete .delete:hover {
+    background-color: rgb(200, 0, 0);
+}
+
+/**
+ * inputs
+ */
+
+.ruigehond014-row input[type="number"] {
+    width: 4em;
+}
+
+/**
+ * compare panel
+ */
+#ruigehond014-compare-overlay {
+    position: fixed;
+    background-color: rgba(240, 240, 240, .8);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#ruigehond014-compare-overlay .wrap {
+    float: right;
+    background-color: rgb(240, 240, 240);
+    border-left: solid 1px rgb(191, 191, 191);
+    height: 100vh;
+    overflow-y: scroll;
+    padding-left: 10px;
+}
+
+#ruigehond014-compare-overlay .wrap .close {
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/**
+ * Modal and notices
+ */
+.ruigehond.modal.dialog,
+#RuigehondModal {
+    position: fixed;
+    width: 40vw;
+    left: 30vw;
+    top: 200px;
+    padding: 2vw;
+    border-radius: 2vw;
+    border: ridge 3px #eee;
+    background-color: #fff;
+    z-index: 100000; /* 1 above wp admin bar */
+}
+
+.ruigehond.modal.wrapper {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .4);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000; /* 1 above wp admin bar */
+}
+
+.ruigehond.notices {
+    position: fixed;
+    top: 0;
+    width: 80vw;
+    left: 10vw;
+    z-index: 100000; /* 1 above wp admin bar */
+}
+
+.ruigehond.notice {
+    padding: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    color: rgb(0, 0, 0);
+    background-color: rgb(240, 240, 240);
+    font-weight: bold;
+    display: block;
+    border: none;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .09);
+}
+
+.ruigehond.notice.log {
+    background-color: rgb(130, 210, 120);
+}
+
+.ruigehond.notice.warn {
+    background-color: rgb(255, 200, 0);
+}
+
+.ruigehond.notice.error {
+    background-color: rgb(200, 0, 0);
+    color: #fff;
+}
+
